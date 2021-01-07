@@ -1,0 +1,48 @@
+---
+title: "Week 2 Assignment"
+author: "Zachary Martin"
+date: "1/7/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Developing Data Products - Week 2 Assignment
+
+07 January 2021
+
+##Instructions
+Create a web page using R Markdown that features a map created with Leaflet.
+
+Host your webpage on either GitHub Pages, RPubs, or NeoCities.
+
+# Submission
+I create an interactive map with a pin and pop up of my home.
+
+## I first clear my global environment and set my working directory
+```{r warning=FALSE, error=FALSE}
+rm(list=ls())
+setwd("/Users/zacharymartin/Desktop/Coursera/DevDataProducts")
+```  
+
+```{r, echo=TRUE}
+library(leaflet)
+my_map <- leaflet() %>%
+  addTiles() %>%
+addMarkers(lat=32.3402946, lng=-106.7451672, popup = "Home is Where the Heart Is!")
+
+my_map
+```
+
+## Rubric
+
+1. Does the web page feature a date and is this date less than two months before the date that you're grading this assignment?
+
+2. Does the web page feature an interactive map that appears to have been created with Leaflet?
+
+
+
+
+
