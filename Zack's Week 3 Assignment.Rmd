@@ -1,0 +1,42 @@
+---
+title: "Week 3 Assignment"
+author: "Zachary Martin"
+date: "1/15/2021"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R Markdown 
+
+Create a web page presentation using R Markdown that features a plot created with Plotly. Host your webpage on either GitHub Pages, RPubs, or NeoCities. Your webpage must contain the date that you created the document, and it must contain a plot created with Plotly. 
+
+## Rubric
+
+- Does the web page feature a date and is this date less than two months before the date that you're grading this assignment?
+- Is the web page a presentation and does it feature an interactive plot that appears to have been created with Plotly?
+
+## DATA
+
+```{r, echo=FALSE}
+data("mtcars")
+
+head(mtcars)
+```
+## MTCARS Horse Power vs. Mileage Plot
+
+Using the `mtcars` dataset we plot can attempt to understand the factors that lead to better fuel effeciancy.
+
+We plot horse power (`hp`) vs. mileage (`mpg`) spatially along the x/y axes. 
+
+## MTCARS Fuel Effeciancy
+
+```{r, echo=FALSE, fig.align='center', fig.cap='MTCARS FIGURE'}
+plot(mtcars$hp, mtcars$mpg, xlab="Horse Power", ylab = "MPG")
+```
+```{r, echo=FALSE, fig.align='center', fig.cap='MTCARS FIGURE'}
+plot_ly(mtcars, x = ~hp, y = ~cyl, 
+        type = "scatter", mode = "markers", color = ~mpg)
+```
